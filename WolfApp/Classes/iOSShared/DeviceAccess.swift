@@ -83,6 +83,8 @@ public struct DeviceAccess {
         case .denied, .restricted:
             viewController.presentAccessSheet(for: .camera)
             return false
+        @unknown default:
+            fatalError()
         }
     }
 
@@ -109,6 +111,8 @@ public struct DeviceAccess {
         case .denied, .restricted:
             viewController.presentAccessSheet(for: .photoLibrary)
             return false
+        @unknown default:
+            fatalError()
         }
     }
 
@@ -136,6 +140,8 @@ public struct DeviceAccess {
         case .denied, .restricted:
             viewController.presentAccessSheet(for: .locationAlways)
             return false
+        @unknown default:
+            fatalError()
         }
     }
 
@@ -161,6 +167,8 @@ public struct DeviceAccess {
         case .denied, .restricted:
             viewController.presentAccessSheet(for: .locationWhenInUse)
             return false
+        @unknown default:
+            fatalError()
         }
     }
 

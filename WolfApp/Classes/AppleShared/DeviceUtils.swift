@@ -43,9 +43,9 @@ public var deviceModel: String? {
     let utsSize = MemoryLayout<utsname>.size
     var systemInfo = Data(capacity: utsSize)
 
-    let model: String? = systemInfo.withUnsafeMutableBytes { (uts: UnsafeMutablePointer<utsname>) in
-        guard uname(uts) == 0 else { return nil }
-        return uts.withMemoryRebound(to: CChar.self, capacity: utsSize) { String(cString: $0) }
+    let model: String? = systemInfo.withUnsafeMutableBytes { uts in
+        guard uname(uts.bindMemory(to: utsname.self).baseAddress) == 0 else { return nil }
+        return String(cString: uts.bindMemory(to: CChar.self).baseAddress!)
     }
 
     return model
