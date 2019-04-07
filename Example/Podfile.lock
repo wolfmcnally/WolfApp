@@ -1,16 +1,11 @@
 PODS:
   - ExtensibleEnumeratedName (2.0)
-  - WolfAnimation (2.0.0):
-    - WolfConcurrency
-    - WolfFoundation
-    - WolfLog
   - WolfApp (2.0.0):
-    - WolfAnimation
     - WolfConcurrency
     - WolfFoundation
     - WolfLocale
     - WolfOSBridge
-  - WolfConcurrency (2.0.0):
+  - WolfConcurrency (3.0.0):
     - WolfFoundation
     - WolfLog
     - WolfNumerics
@@ -42,7 +37,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - ExtensibleEnumeratedName
-    - WolfAnimation
     - WolfConcurrency
     - WolfFoundation
     - WolfLocale
@@ -59,9 +53,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   ExtensibleEnumeratedName: 50f2d256f6d56baecf681f6fbb6362343dcf885b
-  WolfAnimation: 3395a7cbcd27085b2d1e67355b44fd264237071f
-  WolfApp: 688652cfaddedb1ccf734a5e9c33e6aa9e02ad90
-  WolfConcurrency: e5445d30df478486485b093408fbd50dac0887cc
+  WolfApp: f2e2d1cf7838dfe2544905033883f72dd851b35d
+  WolfConcurrency: f8955c1aab666006226b5a057555e52ab9e1e1cc
   WolfFoundation: df7514e9faf208f591f02cb156ddb537e2a14958
   WolfLocale: cb8a9870ff13e1b3576d300af7c2057ba6aaaf28
   WolfLog: b2f3483d6b69aaca1cd65c8e78cf84b20d5dbe50

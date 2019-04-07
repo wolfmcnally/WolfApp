@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'WolfApp'
-    s.version          = '2.0.0'
+    s.version          = '2.0.1'
     s.summary          = 'Tools for working at the app- and device-level of iOS and macOS, including resources and notifications.'
 
     s.homepage         = 'https://github.com/wolfmcnally/WolfApp'
@@ -24,6 +24,5 @@ Pod::Spec.new do |s|
     s.dependency 'WolfLocale'
     s.dependency 'WolfFoundation'
     s.dependency 'WolfConcurrency'
-    s.dependency 'WolfAnimation'
     s.dependency 'WolfOSBridge'
 end
