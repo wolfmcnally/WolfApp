@@ -23,7 +23,7 @@
 //  SOFTWARE.
 
 import UIKit
-import WolfFoundation
+import WolfCore
 
 public func printViewTouchedInEvent(_ event: UIEvent) {
     guard event.type == .touches else { return }

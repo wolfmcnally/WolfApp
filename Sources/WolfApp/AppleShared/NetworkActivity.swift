@@ -1,8 +1,8 @@
 //
-//  BundleExtensions.swift
+//  NetworkActivity.swift
 //  WolfApp
 //
-//  Created by Wolf McNally on 6/23/17.
+//  Created by Wolf McNally on 6/17/16.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -22,30 +22,35 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import Foundation
-import WolfFoundation
+#if canImport(UIKit)
+    import UIKit
+#endif
 
-/// WolfApp.BundleClass.self can be used as an argument to the Bundle.findBundle(forClass:) method to search within this framework bundle.
-public class BundleClass { }
+import WolfCore
 
-extension Bundle {
-    /// Similar to Bundle.bundleForClass, except if aClass is nil (or omitted) the main bundle is returned
-    public static func findBundle(forClass aClass: AnyClass? = nil) -> Bundle {
-        let bundle: Bundle
-        if let aClass = aClass {
-            bundle = Bundle(for: aClass)
-        } else {
-            bundle = Bundle.main
-        }
-        return bundle
+public let networkActivity = NetworkActivity()
+
+public class NetworkActivity {
+    private let hysteresis: Hysteresis
+
+    init() {
+        hysteresis = Hysteresis(
+            onStart: {
+                #if os(iOS)
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                #endif
+        },
+            onEnd: {
+                #if os(iOS)
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                #endif
+        },
+            startLag: 0.2,
+            endLag: 0.2
+        )
     }
 
-    public static func urlForResource(_ name: String, withExtension anExtension: String? = nil, subdirectory subpath: String? = nil) -> (Bundle) throws -> URL {
-        return { bundle in
-            guard let url = bundle.url(forResource: name, withExtension: anExtension, subdirectory: subpath) else {
-                throw WolfAppError("Resource not found.")
-            }
-            return url
-        }
+    public func newActivity() -> LockerCause {
+        return hysteresis.newCause()
     }
 }

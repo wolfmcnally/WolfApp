@@ -23,7 +23,7 @@
 //  SOFTWARE.
 
 import UIKit
-import WolfStrings
+import WolfCore
 
 extension UIInterfaceOrientationMask: CustomStringConvertible {
     public var description: String {

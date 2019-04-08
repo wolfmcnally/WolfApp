@@ -23,9 +23,8 @@
 //  SOFTWARE.
 
 import Foundation
-import ExtensibleEnumeratedName
+import WolfCore
 import WolfLog
-import WolfFoundation
 
 public let userDefaults = UserDefaults.standard
 
