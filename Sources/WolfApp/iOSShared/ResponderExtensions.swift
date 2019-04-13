@@ -25,7 +25,7 @@
 import UIKit
 
 extension UIResponder {
-    public var viewController: UIViewController? {
+    public var responderViewController: UIViewController? {
         var resultViewController: UIViewController?
         var responder: UIResponder! = self
         repeat {
