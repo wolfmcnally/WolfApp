@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'WolfApp'
-    s.version          = '2.0.2'
+    s.version          = '2.0.3'
     s.summary          = 'Tools for working at the app- and device-level of iOS and macOS, including resources and notifications.'
 
     s.homepage         = 'https://github.com/wolfmcnally/WolfApp'
