@@ -22,6 +22,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+#if os(iOS)
 import UIKit
 
 public class DeviceOrientationAction {
@@ -41,3 +42,4 @@ public class DeviceOrientationAction {
         UIDevice.current.endGeneratingDeviceOrientationNotifications()
     }
 }
+#endif

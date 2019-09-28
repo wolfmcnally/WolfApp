@@ -1,6 +1,5 @@
 //
 //  FileUtils.swift
-//  CommonCryptoModule
 //
 //  Created by Wolf McNally on 2/23/18.
 //
@@ -21,6 +20,8 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
+
+import Foundation
 
 public var documentsDirectory: URL {
     return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]

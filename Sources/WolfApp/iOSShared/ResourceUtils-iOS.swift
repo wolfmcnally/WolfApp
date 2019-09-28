@@ -22,6 +22,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+#if canImport(UIKit)
 import UIKit
 
 public func loadViewController<T: UIViewController>(withIdentifier identifier: String, fromStoryboardNamed storyboardName: String, in bundle: Bundle? = nil) -> T {
@@ -37,3 +38,4 @@ public func loadInitialViewController<T: UIViewController>(fromStoryboardNamed s
     let storyboard = loadStoryboard(named: storyboardName, in: bundle)
     return storyboard.instantiateInitialViewController() as! T
 }
+#endif

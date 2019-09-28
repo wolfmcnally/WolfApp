@@ -22,6 +22,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+#if os(iOS)
 import UIKit
 import WolfCore
 
@@ -66,3 +67,4 @@ public func printViewTouchedInEvent(_ event: UIEvent) {
 //      NSStringFromClass(Application.self),
 //      NSStringFromClass(AppDelegate.self)
 //    )
+#endif
