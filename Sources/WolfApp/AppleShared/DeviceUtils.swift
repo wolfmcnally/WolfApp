@@ -53,43 +53,55 @@ public var deviceModel: String? {
 
 public var deviceName: String {
     #if os(Linux)
-        return Host.current().localizedName ?? ""
+    return Host.current().localizedName ?? ""
     #elseif os(macOS)
-        fatalError("Unimplemented.")
+    fatalError("Unimplemented.")
     #elseif os(watchOS)
-        fatalError("Unimplemented.")
+    fatalError("Unimplemented.")
     #else
-        return UIDevice.current.name
+    return UIDevice.current.name
     #endif
 }
 
 public var mainScreenScale: CGFloat {
     #if os(iOS) || os(tvOS)
-        return UIScreen.main.scale
+    return UIScreen.main.scale
     #elseif os(macOS)
-        return NSScreen.main!.backingScaleFactor
+    return NSScreen.main!.backingScaleFactor
     #else
-        return 1.0
+    return 1.0
     #endif
 }
 
 #if os(macOS)
-    public let defaultIsFlipped = false
+public let defaultIsFlipped = false
 #else
-    public let defaultIsFlipped = true
+public let defaultIsFlipped = true
 #endif
 
 #if os(iOS) || os(tvOS)
-    public let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
-    public let isPhone: Bool = UIDevice.current.userInterfaceIdiom == .phone
-    public let isTV: Bool = UIDevice.current.userInterfaceIdiom == .tv
-    public let isCarPlay: Bool = UIDevice.current.userInterfaceIdiom == .carPlay
+public let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
+public let isPhone: Bool = UIDevice.current.userInterfaceIdiom == .phone
+public let isTV: Bool = UIDevice.current.userInterfaceIdiom == .tv
+public let isCarPlay: Bool = UIDevice.current.userInterfaceIdiom == .carPlay
 
-    public var defaultTintColor: UIColor = {
-        return UIView().tintColor!
-    }()
+public var defaultTintColor: UIColor = {
+    return UIView().tintColor!
+}()
 #endif
 
 #if os(iOS)
-    public let hasForceTouch = UIScreen.main.traitCollection.forceTouchCapability == .available
+public let hasForceTouch = UIScreen.main.traitCollection.forceTouchCapability == .available
+
+public func isDarkMode(_ traitEnvironment: UITraitEnvironment) -> Bool {
+    if #available(iOS 12, tvOS 10, *) {
+        return traitEnvironment.traitCollection.userInterfaceStyle == .dark
+    } else {
+        return false
+    }
+}
+
+public var isDarkMode: Bool {
+    return isDarkMode(UIScreen.main)
+}
 #endif
