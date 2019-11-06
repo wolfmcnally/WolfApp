@@ -22,10 +22,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#if canImport(AppKit)
-    import AppKit
-    public typealias OSStoryboard = NSStoryboard
-#elseif canImport(UIKit)
-    import UIKit
-    public typealias OSStoryboard = UIStoryboard
+#if canImport(UIKit)
+import UIKit
+public typealias OSStoryboard = UIStoryboard
+#elseif canImport(AppKit)
+import AppKit
+public typealias OSStoryboard = NSStoryboard
 #endif

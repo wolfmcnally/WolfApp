@@ -22,10 +22,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#if canImport(AppKit)
-    import AppKit
-    public typealias OSNib = NSNib
-#elseif canImport(UIKit)
-    import UIKit
-    public typealias OSNib = UINib
+#if canImport(UIKit)
+import UIKit
+public typealias OSNib = UINib
+#elseif canImport(AppKit)
+import AppKit
+public typealias OSNib = NSNib
 #endif

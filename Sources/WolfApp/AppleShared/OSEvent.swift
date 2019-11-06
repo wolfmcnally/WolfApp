@@ -22,10 +22,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#if canImport(AppKit)
-    import AppKit
-    public typealias OSEvent = NSEvent
-#elseif canImport(UIKit)
-    import UIKit
-    public typealias OSEvent = UIEvent
+#if canImport(UIKit)
+import UIKit
+public typealias OSEvent = UIEvent
+#elseif canImport(AppKit)
+import AppKit
+public typealias OSEvent = NSEvent
 #endif
