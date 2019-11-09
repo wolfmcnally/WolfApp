@@ -94,14 +94,27 @@ public var defaultTintColor: UIColor = {
 public let hasForceTouch = UIScreen.main.traitCollection.forceTouchCapability == .available
 
 public func isDarkMode(_ traitEnvironment: UITraitEnvironment) -> Bool {
-    if #available(iOS 12, tvOS 10, *) {
-        return traitEnvironment.traitCollection.userInterfaceStyle == .dark
-    } else {
-        return false
-    }
+    return traitEnvironment.traitCollection.isDarkMode
 }
 
 public var isDarkMode: Bool {
     return isDarkMode(UIScreen.main)
+}
+
+extension UITraitCollection {
+    public var isDarkMode: Bool {
+        if #available(iOS 12, tvOS 10, *) {
+            return userInterfaceStyle == .dark
+        } else {
+            return false
+        }
+    }
+}
+
+extension UIColor {
+    @available(iOS 13, tvOS 13, *)
+    public convenience init(light: UIColor, dark: UIColor) {
+        self.init { return $0.isDarkMode ? dark : light }
+    }
 }
 #endif
