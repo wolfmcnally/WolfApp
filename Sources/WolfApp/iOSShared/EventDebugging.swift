@@ -24,7 +24,7 @@
 
 #if os(iOS)
 import UIKit
-import WolfCore
+import WolfFoundation
 
 public func printViewTouchedInEvent(_ event: UIEvent) {
     guard event.type == .touches else { return }

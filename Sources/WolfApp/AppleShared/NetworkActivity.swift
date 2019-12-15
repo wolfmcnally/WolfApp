@@ -26,7 +26,7 @@
     import UIKit
 #endif
 
-import WolfCore
+import WolfConcurrency
 
 public let networkActivity = NetworkActivity()
 

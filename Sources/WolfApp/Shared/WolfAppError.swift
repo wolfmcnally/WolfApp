@@ -22,9 +22,9 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import WolfFoundation
+import Foundation
 
-public struct WolfAppError: MessageError {
+public struct WolfAppError: Error {
     public let message: String
 
     public init(_ message: String) {

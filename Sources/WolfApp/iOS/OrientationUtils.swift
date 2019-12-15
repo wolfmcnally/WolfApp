@@ -24,7 +24,7 @@
 
 #if os(iOS)
 import UIKit
-import WolfCore
+import WolfStrings
 
 extension UIInterfaceOrientationMask: CustomStringConvertible {
     public var description: String {

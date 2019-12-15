@@ -23,7 +23,10 @@
 //  SOFTWARE.
 
 import Foundation
-import WolfCore
+import ExtensibleEnumeratedName
+import WolfFoundation
+import WolfOSBridge
+import WolfPipe
 
 #if canImport(UIKit)
 import UIKit

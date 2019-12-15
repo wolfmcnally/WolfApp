@@ -28,7 +28,7 @@ import MobileCoreServices
 import Photos
 import CoreLocation
 import WolfLocale
-import WolfCore
+import WolfConcurrency
 
 public struct DeviceAccess {
 

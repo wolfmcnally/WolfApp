@@ -23,7 +23,6 @@
 //  SOFTWARE.
 
 import Foundation
-import WolfCore
 
 /// WolfApp.BundleClass.self can be used as an argument to the Bundle.findBundle(forClass:) method to search within this framework bundle.
 public class BundleClass { }
