@@ -98,7 +98,7 @@ public func isDarkMode(_ traitEnvironment: UITraitEnvironment) -> Bool {
 }
 
 public var isDarkMode: Bool {
-    return isDarkMode(UIScreen.main)
+    return WolfApp.isDarkMode(UIScreen.main)
 }
 
 extension UITraitCollection {

@@ -107,7 +107,7 @@ public struct DeviceAccess {
 
         let status = PHPhotoLibrary.authorizationStatus()
         switch status {
-        case .authorized, .notDetermined:
+        case .authorized, .limited, .notDetermined:
             return true
         case .denied, .restricted:
             viewController.presentAccessSheet(for: .photoLibrary)
